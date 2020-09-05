@@ -1,0 +1,5 @@
+// Please pay attentions
+// it is necessary to have these imports in specific order for theming bootstrap.s
+@import './variables.scss';
+
+@import './bootstrap.scss';
