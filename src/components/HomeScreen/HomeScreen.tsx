@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 import routes from '../../constants/routes';
+import Screen from '../Screen';
 
 const ScreenLink = styled(NavLink)`
     display: inline-block;
@@ -10,9 +11,7 @@ const ScreenLink = styled(NavLink)`
     font-size: 2.75rem;
 `;
 
-const HomeScreenWrapper = styled.div`
-    min-height: 100vh;
-    display: flex;
+const HomeScreenWrapper = styled(Screen)`
     align-items: center;
     justify-content: center;
 `;

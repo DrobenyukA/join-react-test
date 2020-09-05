@@ -1,13 +1,17 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
 
 import AppRouter from './Router';
+import { defaultTheme } from '../../styles/themes';
 
-function App() {
+const App = () => {
+    const [theme] = React.useState(defaultTheme);
+
     return (
-        <div className="app">
+        <ThemeProvider theme={theme}>
             <AppRouter />
-        </div>
+        </ThemeProvider>
     );
-}
+};
 
 export default App;
