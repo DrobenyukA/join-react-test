@@ -31,11 +31,18 @@ const PersonAvatar = styled.img`
 `;
 
 const PersonCard = ({ name = 'Unnamed', image = '', title, subtitle, ...props }: Props) => {
+    const handleImageNotFound = React.useCallback((e: React.SyntheticEvent<HTMLImageElement>) => {
+        const image = e.target as HTMLImageElement;
+        if (image.src.includes('no-avatar.pnd')) {
+            return;
+        }
+        image.src = '/no-avatar.png';
+    }, []);
     return (
         <Container fluid={true} {...props}>
             <Row>
                 <Col xs="3">
-                    <PersonAvatar src={image} alt={`Avatar for ${name}`} />
+                    <PersonAvatar src={image} alt={`Avatar for ${name}`} onError={handleImageNotFound} />
                 </Col>
                 <Col xs="9">
                     {title && <PersonCardText>{title}</PersonCardText>}

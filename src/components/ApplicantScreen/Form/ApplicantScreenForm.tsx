@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Form, FormGroup, Label, Input, Row, Col, Button } from 'reactstrap';
 
+import { Application } from '../../../types';
+
 const Submit = styled(Button)`
     display: block;
     width: 100%;
@@ -11,16 +13,6 @@ const Submit = styled(Button)`
 const Disclaimer = styled.p`
     margin: 1rem 0;
 `;
-
-interface Application {
-    [index: string]: string;
-    email: string;
-    password: string;
-    firstName: string;
-    lastName: string;
-    phone: string;
-    agree: string;
-}
 
 interface Props {
     onSubmit: (fields: Application) => void;
