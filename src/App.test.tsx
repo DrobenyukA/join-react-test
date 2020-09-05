@@ -1,9 +1,16 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { shallow, ShallowWrapper } from 'enzyme';
+import toJson from 'enzyme-to-json';
 import App from './App';
 
-test('renders learn react link', () => {
-    const { getByText } = render(<App />);
-    const linkElement = getByText(/learn react/i);
-    expect(linkElement).toBeInTheDocument();
+describe('<App />', () => {
+    let wrapper: ShallowWrapper;
+
+    beforeAll(() => {
+        wrapper = shallow(<App />);
+    });
+
+    it('Should have correct layout', () => {
+        expect(toJson(wrapper)).toMatchSnapshot();
+    });
 });
