@@ -4,7 +4,6 @@ import mock from './candidates.json';
 export const readExternalCandidates = () =>
     fetch('https://candidates.free.beeceptor.com/api/candidate')
         .then((response) => {
-            console.log(response);
             if (response.status < 200 && response.status >= 400) {
                 throw new Error(response.statusText);
             }
