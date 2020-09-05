@@ -18,6 +18,7 @@
         "@typescript-eslint/eslint-plugin": "^4.0.1",
         "@typescript-eslint/parser": "^4.0.1",
         "bootstrap": "^4.5.2",
+        "cypress": "^5.1.0",
         "enzyme": "^3.11.0",
         "enzyme-adapter-react-16": "^1.15.4",
         "enzyme-to-json": "^3.5.0",
@@ -41,7 +42,8 @@
         "test:coverage": "react-scripts test --coverage",
         "eject": "react-scripts eject",
         "prettier": "prettier --config .prettierrc --write ./**/*.ts*",
-        "lint": "eslint '*/**/*.{ts,tsx}'"
+        "lint": "eslint '*/**/*.{ts,tsx}'",
+        "cypress:open": "cypress open"
     },
     "eslintConfig": {
         "extends": "react-app"
