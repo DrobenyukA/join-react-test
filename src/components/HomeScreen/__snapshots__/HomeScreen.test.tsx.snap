@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomeScreen /> Should have correct layout 1`] = `
+<styled.div>
+  <Styled(NavLink)
+    to="/applicant"
+  >
+    Applicant screen
+  </Styled(NavLink)>
+  <Styled(NavLink)
+    to="/candidates"
+  >
+    Candidate screen
+  </Styled(NavLink)>
+</styled.div>
+`;
