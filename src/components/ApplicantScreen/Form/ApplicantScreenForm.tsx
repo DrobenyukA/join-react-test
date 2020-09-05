@@ -67,8 +67,8 @@ const ApplicantScreenForm = ({ onSubmit }: Props) => {
             </FormGroup>
             <FormGroup check={true}>
                 <Label check={true}>
-                    <Input type="checkbox" name="agree" />I agree to JOIN`s <a href="#">terms and conditions</a> as well
-                    as the <a href="#">privacy policy</a>
+                    <Input type="checkbox" name="agree" required={true} />I agree to JOIN`s{' '}
+                    <a href="#">terms and conditions</a> as well as the <a href="#">privacy policy</a>
                 </Label>
             </FormGroup>
             <Submit type="submit" color="primary" className="text-center">
