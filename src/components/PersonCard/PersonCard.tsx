@@ -18,12 +18,15 @@ const PersonCardName = styled.p`
 
 const PersonCardText = styled.p`
     margin-bottom: 0.15rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `;
 
 const PersonAvatar = styled.img`
     display: block;
-    width: 5rem;
-    height: 5rem;
+    width: 100%;
+    height: auto;
+    max-width: 4rem;
     margin: 0 auto;
     border-radius: 50%;
     border: 2px solid #fff;
@@ -41,10 +44,10 @@ const PersonCard = ({ name = 'Unnamed', image = '', title, subtitle, ...props }:
     return (
         <Container fluid={true} {...props}>
             <Row>
-                <Col xs="3">
+                <Col xs="2" sm="3" className="p-0">
                     <PersonAvatar src={image} alt={`Avatar for ${name}`} onError={handleImageNotFound} />
                 </Col>
-                <Col xs="9">
+                <Col xs="10" sm="9">
                     {title && <PersonCardText>{title}</PersonCardText>}
                     <PersonCardName>{name}</PersonCardName>
                     {subtitle && <PersonCardText>{subtitle}</PersonCardText>}

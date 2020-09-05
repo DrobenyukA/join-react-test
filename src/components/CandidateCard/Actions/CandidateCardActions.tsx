@@ -12,7 +12,7 @@ interface Props {
 }
 
 const CandidateCardActionsButton = styled(ButtonDropdown)`
-    padding-right: 1.25rem;
+    padding-right: 0.85rem;
 `;
 
 const CandidateCardActions = ({ candidate, onDelete, onStatusChange }: Props) => {

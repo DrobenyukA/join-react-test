@@ -14,8 +14,8 @@ interface Ranks {
 }
 
 const CandidatesScoreWrapper = styled(CircularProgressbar)`
-    width: 80px;
-    height: 80px;
+    max-width: 4rem;
+    height: auto;
     margin-left: auto;
 `;
 

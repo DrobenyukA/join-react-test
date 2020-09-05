@@ -31,11 +31,11 @@ const AppliedDate = styled.span`
 const CandidateCard: React.FC<Props> = ({ data, onDelete, onStatusChange, ...props }) => (
     <CandidateCardWrapper fluid={true} {...props}>
         <Row>
-            <Col xs="10">
+            <Col xs="9" sm="10" className="pr-0">
                 <PersonCard name={data.fullName} subtitle={data.email} image={data.avatar} />
                 <Container fluid={true}>
                     <Row>
-                        <Col xs={{ size: 9, offset: 3 }}>
+                        <Col xs={{ size: 10, offset: 2 }} sm={{ size: 9, offset: 3 }} className="pr-0">
                             <CandidateCardStatus status={data.state} />
                             <AppliedText>
                                 applied on <AppliedDate>{data.applied_on}</AppliedDate>
@@ -44,7 +44,7 @@ const CandidateCard: React.FC<Props> = ({ data, onDelete, onStatusChange, ...pro
                     </Row>
                 </Container>
             </Col>
-            <Col xs="2" className="text-right d-flex flex-column justify-content-between">
+            <Col xs="3" sm="2" className="text-right d-flex flex-column justify-content-between">
                 <CandidateScore data={data} />
                 <CandidateCardActions candidate={data} onDelete={onDelete} onStatusChange={onStatusChange} />
             </Col>
