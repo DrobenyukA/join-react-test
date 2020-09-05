@@ -15,11 +15,6 @@ const CandidateCardActionsButton = styled(ButtonDropdown)`
     padding-right: 1.25rem;
 `;
 
-const CandidateCardActionsMenu = styled(DropdownMenu)`
-    left: auto !important;
-    right: -35px !important;
-`;
-
 const CandidateCardActions = ({ candidate, onDelete, onStatusChange }: Props) => {
     const [isOpened, setOpenStatus] = React.useState(false);
     const availableStatuses = React.useMemo(() => statuses.filter((status) => status !== candidate.state), [candidate]);
@@ -32,7 +27,7 @@ const CandidateCardActions = ({ candidate, onDelete, onStatusChange }: Props) =>
             <DropdownToggle caret={false} color="link">
                 ...
             </DropdownToggle>
-            <CandidateCardActionsMenu>
+            <DropdownMenu right={true}>
                 <DropdownItem header={true}>Change status:</DropdownItem>
                 {availableStatuses.map((status) => (
                     <DropdownItem key={status} onClick={() => onStatusChange({ ...candidate, state: status })}>
@@ -41,7 +36,7 @@ const CandidateCardActions = ({ candidate, onDelete, onStatusChange }: Props) =>
                 ))}
                 <DropdownItem divider />
                 <DropdownItem onClick={handleDelete}>Delete</DropdownItem>
-            </CandidateCardActionsMenu>
+            </DropdownMenu>
         </CandidateCardActionsButton>
     );
 };
